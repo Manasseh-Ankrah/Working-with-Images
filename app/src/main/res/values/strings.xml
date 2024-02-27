@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Images Tutorial</string>
+    <string name="string_grapes">Switch to Grapes</string>
+    <string name="switch_apple">Switch to Apple</string>
 </resources>

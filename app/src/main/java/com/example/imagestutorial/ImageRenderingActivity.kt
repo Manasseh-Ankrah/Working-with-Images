@@ -15,18 +15,19 @@ class ImageRenderingActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.switchFruit.setOnCheckedChangeListener {_, isChecked ->
-            if (isChecked) {
-                binding.imageViewFruit.setImageResource(R.drawable.grapes)
-                binding.switchFruit.text = getString(R.string.switch_apple )
-
-            } else {
-                binding.imageViewFruit.setImageResource(R.drawable.apple)
-                binding.switchFruit.text = getString(R.string.string_grapes)
-
-            }
+            toggleImage(isChecked)
         }
+    }
 
+    private fun toggleImage(isChecked: Boolean) {
+        if (isChecked) {
+            binding.imageViewFruit.setImageResource(R.drawable.grapes)
+            binding.switchFruit.text = getString(R.string.switch_apple)
 
+        } else {
+            binding.imageViewFruit.setImageResource(R.drawable.apple)
+            binding.switchFruit.text = getString(R.string.string_grapes)
 
+        }
     }
 }

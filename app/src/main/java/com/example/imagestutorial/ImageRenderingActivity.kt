@@ -17,11 +17,11 @@ class ImageRenderingActivity : AppCompatActivity() {
         binding.switchFruit.setOnCheckedChangeListener {_, isChecked ->
             if (isChecked) {
                 binding.imageViewFruit.setImageResource(R.drawable.grapes)
-                binding.switchFruit.text = getString(R.string.string_grapes)
+                binding.switchFruit.text = getString(R.string.switch_apple )
 
             } else {
                 binding.imageViewFruit.setImageResource(R.drawable.apple)
-                binding.switchFruit.text = getString(R.string.switch_apple)
+                binding.switchFruit.text = getString(R.string.string_grapes)
 
             }
         }

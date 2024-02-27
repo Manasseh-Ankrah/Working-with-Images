@@ -3,10 +3,12 @@ package com.example.imagestutorial
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.imagestutorial.databinding.ImageMainBinding
+import com.google.android.material.snackbar.Snackbar
 
 class ImageRenderingActivity : AppCompatActivity() {
     //Initializing bindings
     private lateinit var binding: ImageMainBinding
+    private var fruits = listOf(R.drawable.apple,R.drawable.grapes)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //Inflate the activity binding
@@ -14,6 +16,12 @@ class ImageRenderingActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+
+        binding.btnRandom.setOnClickListener {
+            val randomFruit: Int = (fruits).shuffled().first()
+            binding.imageViewFruit.setImageResource(randomFruit)
+//            Snackbar.make(it,"The random number is $randomFruit",Snackbar.LENGTH_LONG).show()
+        }
         binding.switchFruit.setOnCheckedChangeListener {_, isChecked ->
             toggleImage(isChecked)
         }

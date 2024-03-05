@@ -8,7 +8,7 @@ import com.google.android.material.snackbar.Snackbar
 class ImageRenderingActivity : AppCompatActivity() {
     //Initializing bindings
     private lateinit var binding: ImageMainBinding
-    private var fruits = listOf(R.drawable.apple,R.drawable.grapes)
+    private var fruits = mutableListOf(R.drawable.apple,R.drawable.grapes)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //Inflate the activity binding
@@ -16,7 +16,7 @@ class ImageRenderingActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-
+        fruits.add(R.drawable.orange)
         binding.btnRandom.setOnClickListener {
             val randomFruit: Int = (fruits).shuffled().first()
             binding.imageViewFruit.setImageResource(randomFruit)
